@@ -1,0 +1,9 @@
+<div class="viewport" #viewport>
+    <div [style.height.px]="topPaddingHeight"></div>
+    <ng-container *ngFor="let item of visibleData;">
+        <div class="item" [attr.key]="item.index" [ngStyle]="{ height: settings.itemHeight + 'px' }">
+            <ng-container *ngTemplateOutlet="rowTemplateRef; context: { $implicit: item }"></ng-container>
+        </div>
+    </ng-container>
+    <div [style.height.px]="bottomPaddingHeight"></div>
+</div>
